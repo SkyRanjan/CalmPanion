@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container text-center py-5">
+    <h1 class="display-4">Support Your Mental Health</h1>
+    <p class="lead">
+        Connect with CalmPanion, your AI mental health companion. Manage stress, set goals, and achieve mental well-being.
+    </p>
+    <button class="btn btn-primary btn-lg mt-4" data-bs-toggle="modal" data-bs-target="#authModal">Let's Find Your Peace</button>
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+            <img src="{% static 'core/assets/placeholder1.jpg' %}" alt="User 1" class="styled-image img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'core/assets/placeholder2.jpg' %}" alt="User 2" class="styled-image img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'core/assets/placeholder3.jpg' %}" alt="User 3" class="styled-image img-fluid">
+        </div>
+    </div>
+</main>
+
+<!-- Updated Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authModalLabel">Welcome to CalmPanion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="mb-4">Choose how you'd like to continue:</p>
+                <a href="{% url 'core:signin' %}" class="btn btn-primary btn-lg w-100 mb-3">Sign In</a>
+                <a href="{% url 'core:signup' %}" class="btn btn-outline-primary btn-lg w-100">Create Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
